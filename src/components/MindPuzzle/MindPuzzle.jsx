@@ -1,7 +1,8 @@
 import { useState, useEffect  } from 'react'
 import { Button } from 'components'
 import response from './response.json'
-import './MindPuzzle.module.css'
+import styles from './MindPuzzle.module.css'
+import { clx } from 'utils/clx'
 const shuffleArr = (arr) => {
 	return arr.sort(() => Math.random() - 0.5)
 }
@@ -81,22 +82,22 @@ const MindPuzzle = () => {
 	}, [state]) // eslint-disable-line
 
 	const classNames = (cell) => {
-		let className = 'cell '
+		let className = styles.cell
 		if (cell.isActive) {
-			className += 'active '
+			className = clx(className, styles.active)
 		} else if (cell.isMatched) {
-			className += 'matched'
+			className= clx(className, styles.matched)
 		} else {
-			className = 'cell'
+			className = styles.cell
 		}
 		return className
 	}
 	return (
-		<div className='container mind-puzzle'>
-			<div className='grid'>
+		<div className={styles.mindPuzzle}>
+			<div className={styles.grid}>
 				{state.map((rows, rowIdx) => {
 					return (
-						<div key={rowIdx} className='row'>
+						<div key={rowIdx} className={styles.row}>
 							{rows.map((cell, cellIdx) => {
 								return (
 									<div
@@ -105,7 +106,7 @@ const MindPuzzle = () => {
 										onClick={handleSelect(cellIdx, rowIdx)}
 									>
 										{(cell.isActive || cell.isMatched) && (
-											<div className='content'>{cell.content}</div>
+											<div className={styles.content}>{cell.content}</div>
 										)}
 									</div>
 								)
