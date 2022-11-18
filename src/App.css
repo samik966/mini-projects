@@ -19,4 +19,6 @@ body {
 .container {
   width: 98%;
   margin: 0 auto;
+  height: calc(100vh - 60px);
+
 }

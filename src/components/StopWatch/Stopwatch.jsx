@@ -2,7 +2,8 @@ import { Button } from 'components'
 import { useRef, useState } from 'react'
 import style from './Stopwatch.module.css'
 
-const Stopwatch = () => {
+const Stopwatch = (props) => {
+	console.log(props.location)
 	const [timer, setTimer] = useState(0)
 	const timerRef = useRef(null)
 	const [isRunning, setIsRunning] = useState(false)
