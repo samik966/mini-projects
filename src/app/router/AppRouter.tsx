@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 const AppRouter = () => {
     return (
-        <div className="container">
+        <div className="container h-[calc(100%-60px)]">
             <Routes>
                 {ROUTE_PATHS.map((route) => {
                     const { path, element } = route;

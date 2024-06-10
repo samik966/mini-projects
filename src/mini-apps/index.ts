@@ -1,6 +1,7 @@
 export { default as AppListing } from "./AppListing";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as MindPuzzle } from "./MindPuzzle/MindPuzzle";
+export { default as MindPuzzle1 } from "./MindPuzzle/MindPuzzle1";
 export { default as PhotoGallery } from "./PhotoGallery/PhotoGallery";
 export { default as ProgressBar } from "./ProgressBar/ProgressBar";
 export { default as StopWatch } from "./StopWatch/Stopwatch";
